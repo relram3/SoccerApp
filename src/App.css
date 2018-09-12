@@ -1,0 +1,39 @@
+.header {
+  background-color: orangered;
+  height: 40px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 55px;
+}
+
+.title {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.nav-btn {
+  justify-self: start;
+  border: none;
+  border-radius: none;
+
+  background-color: white;
+  height: 2px;
+  width: 35px;
+  margin-top: 20px;
+}
+.nav-btn::before,
+.nav-btn::after {
+  background-color: white;
+  height: 2px;
+  width: 35px;
+  content: "";
+  display: block;
+  margin-left: -6px;
+}
+
+.nav-btn::before {
+  transform: translateY(-7px);
+}
+.nav-btn::after {
+  transform: translateY(5px);
+}
