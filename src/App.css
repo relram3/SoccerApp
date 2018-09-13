@@ -37,3 +37,40 @@
 .nav-btn::after {
   transform: translateY(5px);
 }
+
+.cards {
+  width: 100%;
+  margin: auto 0;
+  display: grid;
+  grid-gap: 30px;
+
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-rows: repeat(2, 1fr);
+
+  align-content: center;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  justify-content: end;
+  align-content: end;
+
+  margin-bottom: 10px;
+  height: 500px;
+}
+
+.homeTeam {
+  font-size: 12px;
+  background-color: blue;
+  text-align: center;
+}
+
+.awayTeam {
+  text-align: center;
+  font-size: 12px;
+  background-color: blue;
+}

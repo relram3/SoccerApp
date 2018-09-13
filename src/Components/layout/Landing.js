@@ -5,9 +5,7 @@ import axios from "axios";
 class Landing extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      response: {}
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -20,33 +18,33 @@ class Landing extends Component {
         header
       )
       .then(data => {
-        this.setState({ response: data.data.matches });
+        this.setState({ response: data.data });
         // if (this.state.response.length > 0){
         console.log(this.state.response.matches);
         console.log(this.state.response);
         // }
       });
   }
+
   render() {
-    const response = this.state || [];
+    if (!this.state.response) return <p className="loader">Loading....</p>;
 
-    console.log("matches", response);
-
-    const card = response.map(match => (
-      <div key={match.id}>
-        {match.homeTeam.name}
-        {match.awayTeam.name}
+    const card = this.state.response.matches.map(match => (
+      <div className="card">
+        <div className="homeTeam">
+          <h2>
+            {match.homeTeam.name} {match.score.fullTime.homeTeam}
+          </h2>
+          <div />
+        </div>
+        <div className="awayTeam">
+          <h2>
+            {match.awayTeam.name} {match.score.fullTime.awayTeam}
+          </h2>
+        </div>
       </div>
     ));
-
-    return (
-      <div>
-        <h1>
-          This is a test
-          {card}
-        </h1>
-      </div>
-    );
+    return <div className="cards">{card}</div>;
   }
 }
 
