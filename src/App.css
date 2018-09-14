@@ -53,24 +53,76 @@
 
 .card {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: 80px repeat(3, 1fr);
 
   justify-content: end;
   align-content: end;
 
   margin-bottom: 10px;
   height: 500px;
+
+  border: 3px solid;
 }
 
 .homeTeam {
-  font-size: 12px;
-  background-color: blue;
+  font-size: 8px;
   text-align: center;
+  color: white;
 }
 
 .awayTeam {
   text-align: center;
-  font-size: 12px;
-  background-color: blue;
+  font-size: 8px;
+  color: white;
+}
+
+.cardHeader {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 1 / -1;
+  justify-content: stretch;
+  align-content: stretch;
+  background-blend-mode: screen;
+  background-image: linear-gradient(to right bottom, white, blue),
+    url(http://www.illinoishighschoolsports.com/wp-content/uploads/2017/11/Soccer-Ball-and-Field.png);
+  background-size: cover;
+}
+
+.score {
+  font-size: 20px;
+}
+
+.standings {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 1fr;
+}
+
+.table {
+  display: grid;
+}
+
+.standingBody {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.standingHeader {
+  font-size: 11px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.standingTeam {
+  grid-column: 2 / 3;
+}
+
+.crest {
+  height: 15px;
+  width: 15px;
+  grid-column: 2 / 3;
 }
